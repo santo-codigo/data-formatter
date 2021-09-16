@@ -1,11 +1,25 @@
 {
-  "name": "formatted-cases-words",
+  "name": "@baddas-team/formatted-cases-words",
   "version": "1.0.0",
   "description": "Snake and camel case formatter",
   "main": "src/index.ts",
-  "repository": "https://github.com/JeanCigoli/formatted-cases-words.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanCigoli/formatted-cases-words.git"
+  },
   "author": "Lucas Santos, Jean Cigoli e Davi Soares",
   "license": "MIT",
-  "keywords": ["snake", "camel", "snakecase", "camelcase"],
-  "homepage": "https://github.com/JeanCigoli/formatted-cases-words#readme"
+  "keywords": [
+    "snake",
+    "camel",
+    "snakecase",
+    "camelcase"
+  ],
+  "homepage": "https://github.com/JeanCigoli/formatted-cases-words#readme",
+  "bugs": {
+    "url": "https://github.com/JeanCigoli/formatted-cases-words/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
