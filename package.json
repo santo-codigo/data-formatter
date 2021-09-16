@@ -1,6 +1,6 @@
 {
   "name": "@baddas-team/formatted-cases-words",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Snake and camel case formatter",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
