@@ -8,11 +8,15 @@ Before installing, [download and install Node.js](https://nodejs.org/en/download
 
 Installation is done using the **npm install command**:
 
-> npm install @baddas-team/formatted-cases-words
+```prompt
+npm install @baddas-team/formatted-cases-words
+```
 
 Or using the yarn:
 
-> yarn add @baddas-team/formatted-cases-words
+```prompt
+yarn add @baddas-team/formatted-cases-words
+```
 
 ## Quick Start
 
@@ -46,7 +50,27 @@ The result is:
 ```json
 {
   "message_text": "Example",
-  "date_text": "2021-09-20T23:19:51.400Z",
+  "date_text": "2021-09-20T23:40:43.381Z",
   "array": [{ "array_text": "" }]
+}
+```
+
+Now when using the reverse:
+
+```js
+const json = formateCamelCaseKeysForSnakeCase({
+  message_text: "Example",
+  date_text: new Date(),
+  array: [{ array_text: "" }],
+});
+```
+
+The result is:
+
+```json
+{
+  "messageText": "Example",
+  "dateText": "2021-09-20T23:41:58.766Z",
+  "array": [{ "arrayText": "" }]
 }
 ```
