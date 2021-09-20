@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JeanCigoli/formatted-cases-words.git"
+    "url": "git+https://github.com/badassteamcode/formatted-cases-words.git"
   },
   "author": "Lucas Santos, Jean Cigoli e Davi Soares",
   "license": "MIT",
@@ -16,9 +16,9 @@
     "snakecase",
     "camelcase"
   ],
-  "homepage": "https://github.com/JeanCigoli/formatted-cases-words#readme",
+  "homepage": "https://github.com/badassteamcode/formatted-cases-words#readme",
   "bugs": {
-    "url": "https://github.com/JeanCigoli/formatted-cases-words/issues"
+    "url": "https://github.com/badassteamcode/formatted-cases-words/issues"
   },
   "scripts": {
     "prebuild": "rimraf dist",
