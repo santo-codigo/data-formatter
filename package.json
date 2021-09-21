@@ -14,7 +14,14 @@
     "snake",
     "camel",
     "snakecase",
-    "camelcase"
+    "camelcase",
+    "camel-case",
+    "snake-case",
+    "convert",
+    "text",
+    "string",
+    "underscore",
+    "separator"
   ],
   "homepage": "https://github.com/badassteamcode/formatted-cases-words#readme",
   "bugs": {
