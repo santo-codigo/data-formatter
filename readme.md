@@ -9,13 +9,13 @@ Before installing, [download and install Node.js](https://nodejs.org/en/download
 Installation is done using the **npm install command**:
 
 ```prompt
-npm install @baddas-team/formatted-cases-words
+npm install @badass-team-code/formatted-cases-words
 ```
 
 Or using the yarn:
 
 ```prompt
-yarn add @baddas-team/formatted-cases-words
+yarn add @badass-team-code/formatted-cases-words
 ```
 
 ## Quick Start
@@ -58,7 +58,7 @@ The result is:
 Now when using the reverse:
 
 ```js
-const json = formateCamelCaseKeysForSnakeCase({
+const json = formateSnakeCaseKeysForCamelCase({
   message_text: "Example",
   date_text: new Date(),
   array: [{ array_text: "" }],
