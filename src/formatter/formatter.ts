@@ -1,40 +1,45 @@
-import { capitalize } from '../utils';
+import { capitalize } from "../utils";
 
 export const snakeCaseForCamelCaseFormatter = (object: object): object => {
   if (!object) return object;
-  return Object.entries(object).reduce((accumulator, currentValue) => {
-    const [key, value] = currentValue;
 
-    const splitKey = key.split('_');
+  const entries = Object.entries(object).map(([key, value]) => {
+    const splitKey = key.split("_");
 
     const keyInCamelCase = splitKey
       .map((value, index) => (index > 0 ? capitalize(value) : value))
-      .join('');
+      .join("");
 
-    return { ...accumulator, [keyInCamelCase]: value };
-  }, {});
+    return [keyInCamelCase, value];
+  });
+
+  return Object.fromEntries(entries);
 };
 
 export const camelCaseForSnakeCaseFormatter = (object: object): object => {
   if (!object) return object;
-  return Object.entries(object).reduce((accumulator, currentValue) => {
-    const [key, value] = currentValue;
 
-    const keyInSnakeCase = key.replace(/^[a-z]|[A-Z]/g, (value, index) =>
-      index === 0 ? value.toLowerCase() : `_${value.toLowerCase()}`,
+  const camelCaseRegex = /(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])/g;
+
+  const entries = Object.entries(object).map(([key, value]) => {
+    const keyInSnakeCase = key.replace(
+      camelCaseRegex,
+      (value) => `_${value.toLowerCase()}`
     );
 
-    return { ...accumulator, [keyInSnakeCase]: value };
-  }, {});
+    return [keyInSnakeCase, value];
+  });
+
+  return Object.fromEntries(entries);
 };
 
-export const toLowerCaseFormatter = (object: object): object => {
+export const lowerCaseFormatter = (object: object): object => {
   if (!object) return object;
-  return Object.entries(object).reduce((accumulator, currentValue) => {
-    const [key, value] = currentValue;
 
+  const entries = Object.entries(object).map(([key, value]) => {
     const keyToLowerCase = String(key).toLocaleLowerCase();
+    return [keyToLowerCase, value];
+  });
 
-    return { ...accumulator, [keyToLowerCase]: value };
-  }, {});
+  return Object.fromEntries(entries);
 };
