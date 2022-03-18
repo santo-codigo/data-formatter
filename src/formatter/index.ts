@@ -1,15 +1,15 @@
 import {
   camelCaseForSnakeCaseFormatter,
-  toLowerCaseFormatter,
+  lowerCaseFormatter,
   snakeCaseForCamelCaseFormatter,
-} from './formatter';
-import { recursiveDataConvertFilterLayer } from './recursive-data-converter';
+} from "./formatter";
+import { handleData } from "./data-handler";
 
-export const formateSnakeCaseKeysForCamelCase = (data: any) =>
-  recursiveDataConvertFilterLayer(data, snakeCaseForCamelCaseFormatter);
+export const convertSnakeCaseKeysToCamelCase = <T = any>(data: any): T =>
+  handleData(data, snakeCaseForCamelCaseFormatter);
 
-export const formateCamelCaseKeysForSnakeCase = (data: any) =>
-  recursiveDataConvertFilterLayer(data, camelCaseForSnakeCaseFormatter);
+export const convertCamelCaseKeysToSnakeCase = <T = any>(data: any): T =>
+  handleData(data, camelCaseForSnakeCaseFormatter);
 
-export const formateToLowerCase = (data: any) =>
-  recursiveDataConvertFilterLayer(data, toLowerCaseFormatter);
+export const convertToLowerCase = <T = any>(data: any): T =>
+  handleData(data, lowerCaseFormatter);
