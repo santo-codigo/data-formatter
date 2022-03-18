@@ -1,12 +1,12 @@
 {
-  "name": "@badass-team-code/formatted-cases-words",
-  "version": "0.0.2",
-  "description": "Snake and camel case formatter",
+  "name": "@badass-team-code/data-formatter",
+  "version": "1.0.0",
+  "description": "Javascript data formatter",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/badassteamcode/formatted-cases-words.git"
+    "url": "git+https://github.com/badasst3am/data-formatter.git"
   },
   "author": "Lucas Santos, Jean Cigoli e Davi Soares",
   "license": "MIT",
@@ -14,6 +14,8 @@
     "snake",
     "camel",
     "snakecase",
+    "lowercase",
+    "lower-case",
     "camelcase",
     "camel-case",
     "snake-case",
@@ -23,15 +25,14 @@
     "underscore",
     "separator"
   ],
-  "homepage": "https://github.com/badassteamcode/formatted-cases-words#readme",
+  "homepage": "https://github.com/badasst3am/data-formatter#readme",
   "bugs": {
-    "url": "https://github.com/badassteamcode/formatted-cases-words/issues"
+    "url": "https://github.com/badasst3am/data-formatter/issues"
   },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc --declaration",
-    "prepublish": "yarn build",
-    "server:dev": "tsnd --transpile-only --ignore-watch node_modules src/main/server.ts"
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "ts-node-dev": "^1.1.8",
