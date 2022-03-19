@@ -1,0 +1,9 @@
+node_modules
+docs
+log
+coverage
+dist
+.vscode
+src/**/*.json
+**/*.jpeg
+jest.config.ts

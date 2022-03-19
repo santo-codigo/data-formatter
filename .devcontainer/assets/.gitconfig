@@ -1,0 +1,8 @@
+[core]
+	editor = code --wait
+[alias]
+	st = !git status -s
+	cm = !git add --all && git commit -m
+	rs = !git reset
+	ch = !git checkout
+	lg = !git log --pretty=format:'%C(blue)%h %C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'

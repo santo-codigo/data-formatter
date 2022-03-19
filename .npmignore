@@ -1,0 +1,46 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
+
+# Coverage reports
+coverage
+
+# API keys and secrets
+.env
+
+# Editors
+.idea
+*.iml
+.devcontainer
+.vscode
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# ignore yarn.lock
+yarn.lock
+
+# Others
+.husky
+.dockerignore
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.huskyrc.json
+.lintstagedrc.json
+.prettierrc
+babel.config.js
+tsconfig.json
