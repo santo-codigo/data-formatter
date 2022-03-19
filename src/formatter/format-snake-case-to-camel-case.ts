@@ -1,9 +1,11 @@
-import { applyFunctionRecursively, capitalize } from '@/utils';
+import { applyFunctionRecursively, capitalize, isPromise } from '@/utils';
 
-import { Data } from './types';
+import { Data, GenericObject, Options } from './types';
 
-const formatSnakeCaseToCamelCase = (object: object): object => {
-  if (!object) return object;
+const formatSnakeCaseToCamelCase = <T = any>(
+  object: GenericObject | any
+): T => {
+  if (!object || typeof object !== 'object' || isPromise(object)) return object;
 
   const entries = Object.entries(object).map(([key, value]) => {
     const splitKey = key.split('_');
@@ -18,5 +20,10 @@ const formatSnakeCaseToCamelCase = (object: object): object => {
   return Object.fromEntries(entries);
 };
 
-export const convertSnakeCaseKeysToCamelCase = <T = any>(data: Data): T =>
-  applyFunctionRecursively(data, formatSnakeCaseToCamelCase);
+export const convertSnakeCaseKeysToCamelCase = <T = any>(
+  data: Data,
+  options?: Options
+): T => {
+  if (options?.recursive === false) return formatSnakeCaseToCamelCase(data);
+  return applyFunctionRecursively(data, formatSnakeCaseToCamelCase);
+};
