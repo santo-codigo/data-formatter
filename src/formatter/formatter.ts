@@ -1,6 +1,6 @@
 import { capitalize } from "../utils";
 
-export const snakeCaseForCamelCaseFormatter = (object: object): object => {
+export const formatSnakeCaseToCamelCase = (object: object): object => {
   if (!object) return object;
 
   const entries = Object.entries(object).map(([key, value]) => {
@@ -16,7 +16,7 @@ export const snakeCaseForCamelCaseFormatter = (object: object): object => {
   return Object.fromEntries(entries);
 };
 
-export const camelCaseForSnakeCaseFormatter = (object: object): object => {
+export const formatCamelCaseToSnakeCase = (object: object): object => {
   if (!object) return object;
 
   const camelCaseRegex = /(?<!^)([A-Z][a-z]|(?<=[a-z])[A-Z])/g;
@@ -33,7 +33,7 @@ export const camelCaseForSnakeCaseFormatter = (object: object): object => {
   return Object.fromEntries(entries);
 };
 
-export const lowerCaseFormatter = (object: object): object => {
+export const formatToLowerCase = (object: object): object => {
   if (!object) return object;
 
   const entries = Object.entries(object).map(([key, value]) => {

@@ -1,15 +1,16 @@
 import {
-  camelCaseForSnakeCaseFormatter,
-  lowerCaseFormatter,
-  snakeCaseForCamelCaseFormatter,
+  formatCamelCaseToSnakeCase,
+  formatToLowerCase,
+  formatSnakeCaseToCamelCase,
 } from "./formatter";
-import { handleData } from "./data-handler";
+import { applyFunctionRecursively } from "../utils";
+import { Data } from "./types";
 
-export const convertSnakeCaseKeysToCamelCase = <T = any>(data: any): T =>
-  handleData(data, snakeCaseForCamelCaseFormatter);
+export const convertSnakeCaseKeysToCamelCase = <T = any>(data: Data): T =>
+  applyFunctionRecursively(data, formatSnakeCaseToCamelCase);
 
-export const convertCamelCaseKeysToSnakeCase = <T = any>(data: any): T =>
-  handleData(data, camelCaseForSnakeCaseFormatter);
+export const convertCamelCaseKeysToSnakeCase = <T = any>(data: Data): T =>
+  applyFunctionRecursively(data, formatCamelCaseToSnakeCase);
 
-export const convertToLowerCase = <T = any>(data: any): T =>
-  handleData(data, lowerCaseFormatter);
+export const convertToLowerCase = <T = any>(data: Data): T =>
+  applyFunctionRecursively(data, formatToLowerCase);
